@@ -16,11 +16,17 @@ function createWindow() {
     const messageBoxPath = '/messageBox/index.html';
     const openChildWinPath = '/openChildWin/index.html';
     const childWinPostMessage = '/childWinPostMessage/index.html';
+    const openWebviewPath = '/openWebview/index.html';
+    const progressBarPath = '/progressBar/index.html';
+    const webFramePath = '/webFrame/index.html';
     // win.loadFile(__dirname + openDialogPath);
     // win.loadFile(__dirname + saveDialogPath);
     // win.loadFile(__dirname + messageBoxPath);
     // win.loadFile(__dirname + openChildWinPath);
-    win.loadFile(__dirname + childWinPostMessage);
+    // win.loadFile(__dirname + childWinPostMessage);
+    // win.loadFile(__dirname + openWebviewPath);
+    // win.loadFile(__dirname + progressBarPath);
+    win.loadFile(__dirname + webFramePath);
     const menu = Menu.buildFromTemplate([{
         label: '菜单',
         submenu: [
