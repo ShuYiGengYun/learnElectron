@@ -1,6 +1,7 @@
 const {app, BrowserWindow} = require('electron');
 let win = null;
-
+const path = require('path');
+const url = require('url');
 function createWindow() {
     const {Menu, dialog} = require('electron');
     win = new BrowserWindow({
@@ -8,10 +9,18 @@ function createWindow() {
         height: 600,
         alwaysOnTop: false,
         frame: true,
+        webPreferences: {
+            nodeIntegration: true,
+        },
     });
-    win.loadFile('index.html');
-    const n = 20;
-    console.log(n);
+    const openDialogPath = '/openDialog/index.html';
+    const saveDialogPath = '/saveDialog/index.html';
+    const messageBoxPath = '/messageBox/index.html';
+    const openChildWinPath = '/openChildWin/index.html';
+    // win.loadFile(__dirname + openDialogPath);
+    // win.loadFile(__dirname + saveDialogPath);
+    // win.loadFile(__dirname + messageBoxPath);
+    win.loadFile(__dirname + openChildWinPath);
     const menu = Menu.buildFromTemplate([{
         label: '菜单',
         submenu: [
