@@ -19,6 +19,7 @@ function createWindow() {
     const openWebviewPath = '/openWebview/index.html';
     const progressBarPath = '/progressBar/index.html';
     const webFramePath = '/webFrame/index.html';
+    const dynamicMenuPath = '/dynamicMenu/index.html';
     // win.loadFile(__dirname + openDialogPath);
     // win.loadFile(__dirname + saveDialogPath);
     // win.loadFile(__dirname + messageBoxPath);
@@ -26,46 +27,50 @@ function createWindow() {
     // win.loadFile(__dirname + childWinPostMessage);
     // win.loadFile(__dirname + openWebviewPath);
     // win.loadFile(__dirname + progressBarPath);
-    win.loadFile(__dirname + webFramePath);
+    // win.loadFile(__dirname + webFramePath);
+    win.loadFile(__dirname + dynamicMenuPath);
     const menu = Menu.buildFromTemplate([{
-        label: '菜单',
+        label: '文件',
         submenu: [
             {
-                id: 0,
-                label: '打开文件',
+                label: '关于',
+                role: 'about',
                 click() {
-                    dialog.showOpenDialog({
-                        title: '选择文件',
-                        properties: ['openFile'],
-                        filters: [
-                            {
-                                name: 'html',
-                                extends: ['html']
-                            }
-                        ]
-                    }, function (filePaths) {
-                        win.loadURL(url.fromat({
-                            pathname: filePaths[0],
-                            protocol: 'file',
-                            slashes: true,
-                        }))
-                    });
+                    const aboutWin = new BrowserWindow({width: 300, height: 200, parent: win, modal: true});
+                    aboutWin.loadFile('./saveDialog/index.html');
+                    aboutWin.openDevTools();
                 }
             },
             {
-                id: 1,
-                label: '开发者工具',
-                click() {
-                    win.webContents.openDevTools();
-                },
+                type: 'separator',
             },
             {
-                id: 2,
-                label: '退出',
-                role: 'quit',
-            }
+                label: '关闭',
+                accelerator: 'Ctrl + Q',
+                click() {
+                    win.close();
+                }
+            },
         ],
-    }]);
+    },
+        {
+            label: '编辑',
+            submenu: [
+                {
+                    label: '复制',
+                    click() {
+                        win.webContents.insertText('复制');
+                    }
+                },
+                {
+                    label: '剪切',
+                    click() {
+                        win.webContents.insertText('剪切');
+                    }
+                }
+            ],
+        }
+    ]);
     Menu.setApplicationMenu(menu);
     win.on('closed', () => {
         win = null;

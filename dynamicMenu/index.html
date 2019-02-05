@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="event.js"></script>
+    <title>DynamicMenu</title>
+</head>
+<body>
+<h1>动态添加菜单</h1>
+<button onclick="addAllOriginMenu()">添加最初的菜单</button>
+<button onclick="saveClick()">保存显示一个窗口</button>
+<div id="addMenuItemContainer">
+    <button onclick="addMenuItem()">动态添加自定义菜单</button>
+    <input type="text" id="menuItem" placeholder="请输入菜单项的名字">
+    <p>
+        单选:<input type="radio" id="radio" name="select"/>
+    </p>
+    <p>
+        多选: <input type="radio" id="checkbox" name="select"/>
+    </p>
+</div>
+</body>
+</html>
