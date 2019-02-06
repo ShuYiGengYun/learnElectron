@@ -5,7 +5,8 @@ function createWindow() {
     win = new BrowserWindow({width: 800, height: 600});
     // win.loadFile('./menu/index.html');
     // win.loadFile('./dynamicMenu/index.html');
-    win.loadFile('./contextMenu/index.html');
+    // win.loadFile('./contextMenu/index.html');
+    win.loadFile('./tray/index.html');
     const radioSvgPath = __dirname + '/menu/icon/radio.png';
     const menuTemplate = [
         {

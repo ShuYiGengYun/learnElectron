@@ -20,6 +20,8 @@ function createWindow() {
     const progressBarPath = '/progressBar/index.html';
     const webFramePath = '/webFrame/index.html';
     const dynamicMenuPath = '/dynamicMenu/index.html';
+    const trayMenuPath = '/tray/index.html';
+    const trayBalloonPath = '/tray/balloon.html';
     // win.loadFile(__dirname + openDialogPath);
     // win.loadFile(__dirname + saveDialogPath);
     // win.loadFile(__dirname + messageBoxPath);
@@ -28,7 +30,7 @@ function createWindow() {
     // win.loadFile(__dirname + openWebviewPath);
     // win.loadFile(__dirname + progressBarPath);
     // win.loadFile(__dirname + webFramePath);
-    win.loadFile(__dirname + dynamicMenuPath);
+    win.loadFile(__dirname + trayBalloonPath);
     const menu = Menu.buildFromTemplate([{
         label: '文件',
         submenu: [
@@ -69,6 +71,10 @@ function createWindow() {
                     }
                 }
             ],
+        },
+        {
+            label: '调试',
+            role: 'toggleDevTools'
         }
     ]);
     Menu.setApplicationMenu(menu);
