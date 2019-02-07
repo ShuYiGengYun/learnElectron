@@ -22,6 +22,7 @@ function createWindow() {
     const dynamicMenuPath = '/dynamicMenu/index.html';
     const trayMenuPath = '/tray/index.html';
     const trayBalloonPath = '/tray/balloon.html';
+    const sqlPath = '/sql/index.html';
     // win.loadFile(__dirname + openDialogPath);
     // win.loadFile(__dirname + saveDialogPath);
     // win.loadFile(__dirname + messageBoxPath);
@@ -30,7 +31,7 @@ function createWindow() {
     // win.loadFile(__dirname + openWebviewPath);
     // win.loadFile(__dirname + progressBarPath);
     // win.loadFile(__dirname + webFramePath);
-    win.loadFile(__dirname + trayBalloonPath);
+    win.loadFile(__dirname + sqlPath);
     const menu = Menu.buildFromTemplate([{
         label: '文件',
         submenu: [

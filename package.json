@@ -6,8 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
+    "postinstall": "install-app-deps",
     "packager": "electron-packager ./ electron --overwrite --app--version=0.0.1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "electron-rebuild": "^1.8.4",
+    "mysql": "^2.16.0",
+    "sqlite3": "^4.0.6"
+  },
+  "devDependencies": {
+    "electron-builder": "^20.38.5"
+  }
 }
