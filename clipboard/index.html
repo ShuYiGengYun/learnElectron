@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="event.js"></script>
+    <title>Electron-Clipboard</title>
+</head>
+<body onload="init()">
+<button id="button_read_text" onclick="onClick_WriteText()">复制文本</button>
+<p/>
+<button id="button_write_text" onclick="onClick_ReadText()">粘贴文本</button>
+<p/>
+<button id="button_read_html" onclick="onClick_WriteHTML()">复制HTML</button>
+<p/>
+<button id="button_write_html" onclick="onClick_ReadHTML()">粘贴HTML</button>
+<p/>
+<button id="button_read_rtf" onclick="onClick_WriteRTF()">复制RTF</button>
+<p/>
+<button id="button_write_rtf" onclick="onClick_ReadRTF()">粘贴RTF</button>
+<p/>
+<button id="button_read_image" onclick="onClick_WriteImage()">复制图像</button>
+<p/>
+<button id="button_write_image" onclick="onClick_ReadImage()">粘贴图像</button>
+<p/>
+<!--可编辑的 div 标签，用于复制和粘贴文本-->
+<div id="text" contenteditable="true" style="width: 500px;height: 500px; border: 1px solid #ccc; padding: 5px;"></div>
+</body>
+</html>

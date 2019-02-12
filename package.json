@@ -2,7 +2,7 @@
   "name": "learnelectron",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
@@ -17,6 +17,7 @@
     "sqlite3": "^4.0.6"
   },
   "devDependencies": {
-    "electron-builder": "^20.38.5"
+    "electron-builder": "^20.38.5",
+    "electron-packager": "^13.0.1"
   }
 }

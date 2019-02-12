@@ -24,6 +24,8 @@ function createWindow() {
     const trayBalloonPath = '/tray/balloon.html';
     const sqlPath = '/sql/index.html';
     const mysqlPath = '/mysql/index.html';
+    const clipboardPath = '/clipboard/index.html';
+    const packagePath = '/package/index.html';
     // win.loadFile(__dirname + openDialogPath);
     // win.loadFile(__dirname + saveDialogPath);
     // win.loadFile(__dirname + messageBoxPath);
@@ -33,7 +35,9 @@ function createWindow() {
     // win.loadFile(__dirname + progressBarPath);
     // win.loadFile(__dirname + webFramePath);
     // win.loadFile(__dirname + sqlPath);
-    win.loadFile(__dirname + mysqlPath);
+    // win.loadFile(__dirname + mysqlPath);
+    // win.loadFile(__dirname + clipboardPath);
+    win.loadFile(__dirname + packagePath);
     const menu = Menu.buildFromTemplate([{
         label: '文件',
         submenu: [
