@@ -156,6 +156,7 @@ function gameOver() {
 
 //绘制贪吃蛇的一个小块，贪吃蛇不是一次绘制成的，每次只绘制一个小块，每 100 毫秒绘制一次
 function drawSnake() {
+    console.log(snakeBody);
     if (snakeBody.some(hasEatenItself)) {
         gameOver();
         return false;
